@@ -54,10 +54,10 @@ i18n:
 
 notifications:
   - type: smtp
-    from: "upptime@securite-du-sol.com"   # must be a valid/verified sender with your SMTP provider
-    to:   "you@example.com"                # <-- change this to your email
-    host: $SMTP_HOST                       # set these as repo Secrets
+    from: "upptime@securite-du-sol.com"  
+    to:   "julio.pachon@sydney.edu.au"               
+    host: $SMTP_HOST                      
     port: $SMTP_PORT
-    secure: true                           # true for port 465; false for 587 (STARTTLS)
+    secure: true                          
     username: $SMTP_USER
     password: $SMTP_PASS
