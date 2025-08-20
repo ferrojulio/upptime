@@ -16,13 +16,19 @@ sites:
       - "User-Agent: Upptime (+https://github.com/upptime/upptime)"
       - "Accept-Language: fr"
 
-  - name: Securite du Sol (www)
-    url: https://www.securite-du-sol.com/
+  - name: index
+    url: https://www.securite-du-sol.com/index/
     expectedStatusCodes: [200, 301, 302]
     maxRedirects: 3
 
   - name: Farmers app
     url: https://securite-du-sol.com/farmers/
+    maxResponseTime: 7000
+    expectedStatusCodes: [200, 301, 302]
+    maxRedirects: 3
+
+  - name: Policymakers app
+    url: https://securite-du-sol.com/policymakers/
     maxResponseTime: 7000
     expectedStatusCodes: [200, 301, 302]
     maxRedirects: 3
@@ -45,3 +51,13 @@ status-website:
 i18n:
   timezone: Australia/Sydney
   dateFormat: "dd MMM yyyy, HH:mm z"
+
+notifications:
+  - type: smtp
+    from: "upptime@securite-du-sol.com"   # must be a valid/verified sender with your SMTP provider
+    to:   "you@example.com"                # <-- change this to your email
+    host: $SMTP_HOST                       # set these as repo Secrets
+    port: $SMTP_PORT
+    secure: true                           # true for port 465; false for 587 (STARTTLS)
+    username: $SMTP_USER
+    password: $SMTP_PASS
