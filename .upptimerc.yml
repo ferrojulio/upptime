@@ -3,20 +3,18 @@
 owner: ferrojulio
 repo: upptime
 
-# Check every 5 minutes (default). Make it */2 for 2-minute checks.
 workflowSchedule: "*/5 * * * *"
 
-# Primary monitors — only public endpoints (Actions run from the public internet)
 sites:
   - name: Securite du Sol (root)
     url: https://securite-du-sol.com/
-    maxResponseTime: 7000          # Shiny can be slow on cold start; tune later
+    maxResponseTime: 7000
     expectedStatusCodes: [200, 301, 302]
     maxRedirects: 3
     method: GET
     headers:
-      User-Agent: "Upptime (+https://github.com/upptime/upptime)"
-      Accept-Language: fr
+      - "User-Agent: Upptime (+https://github.com/upptime/upptime)"
+      - "Accept-Language: fr"
 
   - name: Securite du Sol (www)
     url: https://www.securite-du-sol.com/
@@ -29,13 +27,12 @@ sites:
     expectedStatusCodes: [200, 301, 302]
     maxRedirects: 3
 
-# Status page (served by GitHub Pages for free)
 status-website:
   name: "Sécurité du Sol — Status"
   introTitle: "Service Status"
   introMessage: >
     Automated uptime checks for securite-du-sol.com, updated every 5 minutes.
-  baseUrl: /upptime               
+  baseUrl: /upptime
   theme: night
   favicon: https://securite-du-sol.com/favicon.ico
   logoUrl: https://securite-du-sol.com/Logos.png
@@ -45,9 +42,6 @@ status-website:
     - title: GitHub
       href: https://github.com/ferrojulio/upptime
 
-
-
-# Localisation / formatting
 i18n:
   timezone: Australia/Sydney
   dateFormat: "dd MMM yyyy, HH:mm z"
